@@ -8,4 +8,8 @@
 
 '''
 
+#MAC = 'AAAA:BBBB:CCCC'
+#Решение
 MAC = 'AAAA:BBBB:CCCC'
+print (MAC.replace(':' , '.'))
+
