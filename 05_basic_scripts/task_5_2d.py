@@ -44,10 +44,8 @@ london_co = {
     }
 }
 #Решение
-try:
-    a = input('Enter device name: ')
-    print('Enter parameter name' + ' (' + ','.join(list(london_co[a].keys())) + '): ')
-    a1 = input().lower()
-    print(london_co[a][a1])
-except KeyError:
-    print("Такаго параметра нет")
+a = input('Enter device name: ')
+print('Enter parameter name' + ' (' + ','.join(list(london_co[a].keys())) + '): ')
+a1 = input().lower()
+print(london_co[a].get(a1, "Такого параметра нет"))
+
