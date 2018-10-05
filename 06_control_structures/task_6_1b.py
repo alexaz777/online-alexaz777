@@ -31,6 +31,6 @@ while not address_correct:
         address_correct = True
     else:
         print('Incorrect IPv4 format')
-        a = input('введите IP-адрес еще раз: ')
+        a = input('Введите IP-адрес еще раз: ')
 
 
