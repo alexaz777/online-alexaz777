@@ -26,11 +26,7 @@ i = ','.join(ignore).count(',')
 with open(file_name_in, 'r')	as	src:
     with open(file_name_out, 'w') as dest:
        for line in src:
-            if ignore[0] in line:
-                continue
-            elif ignore[1] in line:
-                continue
-            elif ignore[2] in line:
+            if [word for word in ignore if word in line]:
                 continue
             else:
                 dest.write(line)

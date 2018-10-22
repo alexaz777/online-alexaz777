@@ -17,16 +17,12 @@ ignore = ['duplex', 'alias', 'Current configuration']
 from sys import argv
 
 file_name = argv[1]
-i = ','.join(ignore).count(',')
+
 with open(file_name, 'r')	as	f:
     for line in f:
+        if [word for word in ignore if word in line]:
+            continue
         if line.startswith('!'):
             continue
-        elif ignore[0] in line:
-            continue
-        elif ignore[1] in line:
-           continue
-        elif ignore[2] in line:
-           continue
         else:
            print(line.rstrip())
