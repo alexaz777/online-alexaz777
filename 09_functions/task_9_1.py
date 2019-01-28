@@ -52,16 +52,19 @@ access_dict = {
 }
 
 def generate_access_config(access):
+    result = []
     access_template = [
         'switchport mode access', 'switchport access vlan',
         'switchport nonegotiate', 'spanning-tree portfast',
         'spanning-tree bpduguard enable'
     ]
     for	intf, vlan	in	access.items():
-        print('interface '	+	intf)
+        result.append('interface '	+	intf)
         for	command	in	access_template:
             if	command.endswith('access vlan'):
-                print('	{}	{}'.format(command,	vlan))
+                result.append('{}{}'.format(command + " ", vlan))
             else:
-                print('	{}'.format(command))
+                result.append('{}'.format(command))
+    return result
+
 

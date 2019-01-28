@@ -32,7 +32,7 @@ def generate_access_config(access, psecurity=False):
 
     Возвращает список всех команд, которые были сгенерированы на основе шаблона
     '''
-
+    result = []
     access_template = [
         'switchport mode access', 'switchport access vlan',
         'switchport nonegotiate', 'spanning-tree portfast',
@@ -45,17 +45,18 @@ def generate_access_config(access, psecurity=False):
         'switchport port-security'
     ]
     for	intf, vlan	in	access.items():
-        print('interface '	+	intf)
+        result.append('interface '	+	intf)
         for	command	in	access_template:
             if	command.endswith('access vlan'):
-                print('	{}	{}'.format(command,	vlan))
+                result.append('{}{}'.format(command + " ", vlan))
             else:
-                print('	{}'.format(command))
+                result.append('{}'.format(command))
         for command1 in port_security:
             if psecurity:
-                print('	{}'.format(command1))
+                result.append('{}'.format(command1))
             else:
                 pass
+    return result
 access = {
     'FastEthernet0/12': 10,
     'FastEthernet0/14': 11,
