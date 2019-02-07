@@ -50,10 +50,12 @@ def config_to_dict(cfg_file):
             elif command.startswith(' ') and not '  ' in command:
                 d_value.append(command.rstrip())
                 result[d_key] = d_value
-            elif command.startswith(' ') and '  ' in command:
-                result[d_key] = {}
-                print(d_value[-1])
-                result[d_key]['jhjhhhl'] = command
+                d_value_3 = []
+            elif command.startswith(' ') and  command[0:2] == '  ' in command:
+                d_value_3.append(command.rstrip())
+                result1 = {d_key: {key: [] for key in d_value}}
+                result1[d_key] [d_value[-1]] = d_value_3
+                result.update(result1)
     return result
 
 
@@ -72,7 +74,6 @@ def ignore_command(command, ignore):
     * False - если нет
     '''
     return any(word in command for word in ignore)
-
 
 
 ignore = ['duplex', 'alias', 'Current configuration']
