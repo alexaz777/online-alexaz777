@@ -78,15 +78,3 @@ def ignore_command(command, ignore):
 
 ignore = ['duplex', 'alias', 'Current configuration']
 
-
-def check_ignore(command, ignore):
-    '''
-    Функция проверяет содержится ли в команде слово из списка ignore.
-
-    command - строка. Команда, которую надо проверить
-    ignore - список. Список слов
-
-    Возвращает True, если в команде содержится слово из списка ignore, False - если нет
-
-    '''
-    return any(word in command for word in ignore)
