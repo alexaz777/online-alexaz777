@@ -31,12 +31,12 @@ R6           Fa 0/2          143           R S I           2811       Fa 0/0
 #from sys import argv
 file_name = '/home/python/online-alexaz777/11_modules/sw1_sh_cdp_neighbors.txt'
 with open(file_name, 'r') as f:
-    config_file = f.readlines()
+    show cdp_neighbors = f.readlines()
 
-def parse_cdp_neighbors(line=False):
+def parse_cdp_neighbors(sh_cdp_neighbors):
     result = {}
     result1 = {}
-    for line in config_file:
+    for line in sh_cdp_neighbors:
             line = line.split()
             if line and '>show' in line[0]:
                  i = line[0].find('>')
@@ -49,5 +49,7 @@ def parse_cdp_neighbors(line=False):
                  result1[loc_dev, loc_int + loc_int_number] = rem_dev, rem_int + rem_int_number
             result.update(result1)
     return result
+
+
 
 
