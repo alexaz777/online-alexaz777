@@ -31,7 +31,7 @@ R6           Fa 0/2          143           R S I           2811       Fa 0/0
 #from sys import argv
 file_name = '/home/python/online-alexaz777/11_modules/sw1_sh_cdp_neighbors.txt'
 with open(file_name, 'r') as f:
-    show cdp_neighbors = f.readlines()
+    sh_cdp_neighbors = f.readlines()
 
 def parse_cdp_neighbors(sh_cdp_neighbors):
     result = {}
