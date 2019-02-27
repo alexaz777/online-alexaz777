@@ -17,20 +17,22 @@
 #Решение
 import subprocess
 
-
 list_ip_addresses = ['192.168.9.4', "192.168.9.7", '192.168.9.8', '192.168.9.14', '192.168.9.16']
-print('List_ip_addreses' + str(list_ip_addresses))
-Alive = []
-Unreachable =[]
 
 def check_ip_addresses(list_ip_addresses):
+    Alive = []
+    Unreachable = []
     for ip_addr in list_ip_addresses:
         reply = subprocess.run(['ping', '-c', '3', '-n', ip_addr], stdout= subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         if reply.returncode == 0:
             Alive.append(ip_addr)
         else:
             Unreachable.append(ip_addr)
-    print('Alive' + str(Alive))
-    print('Unreachable' + str(Unreachable))
+    return Alive, Unreachable
 
-check_ip_addresses(list_ip_addresses)
+
+result = check_ip_addresses(list_ip_addresses)
+print('List_ip_addreses' + str(list_ip_addresses))
+print('Alive'+ str(result[0]))
+print('Unreachable' + str(result[1]))
+
