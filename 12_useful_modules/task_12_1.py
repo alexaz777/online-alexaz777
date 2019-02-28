@@ -31,8 +31,9 @@ def check_ip_addresses(list_ip_addresses):
     return Alive, Unreachable
 
 
-result = check_ip_addresses(list_ip_addresses)
-print('List_ip_addreses' + str(list_ip_addresses))
-print('Alive'+ str(result[0]))
-print('Unreachable' + str(result[1]))
+if __name__ == "__main__":
+    result = check_ip_addresses(list_ip_addresses)
+    print('List_ip_addreses' + str(list_ip_addresses))
+    print('Alive'+ str(result[0]))
+    print('Unreachable' + str(result[1]))
 
