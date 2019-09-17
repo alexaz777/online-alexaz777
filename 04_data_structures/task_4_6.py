@@ -25,4 +25,4 @@ print('Prefix:                ' + '{:20}'.format(a[1]))
 b = a[2]
 print('AD/Metric:             ' + '{:20}'.format(b.strip('[]')))
 print('Next-Hop:              ' + '{:20}'.format(a[4]))
-print('Outbound Interface:    ' + '{:20}'.format(a[5]))
+print('Outbound Interface:    ' + '{:20}'.format(a[6]))
