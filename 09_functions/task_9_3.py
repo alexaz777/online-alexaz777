@@ -22,6 +22,7 @@
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 '''
 #Решение
+
 def get_int_vlan_map(cfg_file):
     with open(cfg_file) as f:
         result = {}
@@ -40,4 +41,8 @@ def get_int_vlan_map(cfg_file):
                 vlans = line.split()[-1]
                 result1[int] = vlans
     return result, result1
+
+a = get_int_vlan_map('/home/python/online-alexaz777/09_functions/config_sw1.txt')
+
+print(a)
 
