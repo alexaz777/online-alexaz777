@@ -17,14 +17,6 @@
 
 Проверить работу функции на примере файла config_r1.txt.
 
-#match = re.search(regex, line)
-#f match:
-#   address = match.group('address')
-#   mask = match.group('mask')
-#   result1 = [address, mask]
-#   result2 = tuple(result1)
-#   result.append(result2)
-
 Обратите внимание, что в данном случае, можно не проверять корректность IP-адреса,
 диапазоны адресов и так далее, так как обрабатывается вывод команды, а не ввод пользователя.
 
